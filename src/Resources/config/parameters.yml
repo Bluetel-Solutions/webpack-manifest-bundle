@@ -1,0 +1,2 @@
+parameters:
+    webpack_manifest.webpack_manifest_path: %kernel.root_dir%/../web/assets/manifest.json

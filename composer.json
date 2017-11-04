@@ -1,0 +1,28 @@
+{
+    "name": "bluetel-solutions/webpack-manifest-bundle",
+    "description": "Webpack Manifest support",
+    "keywords": ["webpack", "assets", "symfony", "symfony2"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Wilson",
+            "email": "a@ax.gy"
+        }
+    ],
+    "require": {
+        "php": "^5.3.2 || >=7.0 <7.2",
+        "symfony/framework-bundle": "^2.7|^3.0",
+        "twig/twig": "^1.27|^2.0",
+        "symfony/twig-bundle": "^2.3|^3.0"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Bluetel\\WebpackManifestBundle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {}
+    }
+}
+

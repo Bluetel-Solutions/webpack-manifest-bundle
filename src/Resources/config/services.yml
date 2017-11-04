@@ -1,0 +1,8 @@
+services:
+    # Webpack Manifest Twig Extension.
+    webpack_manifest.twig_extension:
+        class: Bluetel\WebpackManifestBundle\Twig\WebpackManifestExtension
+        arguments:
+            - "%webpack_manifest.webpack_manifest_path%"
+        tags:
+            - { name: twig.extension }
