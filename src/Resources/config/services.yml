@@ -1,8 +1,15 @@
 services:
-    # Webpack Manifest Twig Extension.
-    webpack_manifest.twig_extension:
-        class: Bluetel\WebpackManifestBundle\Twig\WebpackManifestExtension
+
+    webpack_manifest:
+        class: Bluetel\WebpackManifestBundle\WebpackManifest
         arguments:
             - "%webpack_manifest.webpack_manifest_path%"
-        tags:
-            - { name: twig.extension }
+
+    webpack_manifest.controller:
+        class: Bluetel\WebpackManifestBundle\Controller\WebpackManifestController
+        arguments: ["@webpack_manifest"]
+
+    webpack_manifest.twig_extension:
+        class: Bluetel\WebpackManifestBundle\Twig\WebpackManifestExtension
+        arguments: ["@webpack_manifest"]
+        tags: [{ name: twig.extension }]

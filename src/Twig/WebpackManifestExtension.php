@@ -1,18 +1,23 @@
 <?php
 namespace Bluetel\WebpackManifestBundle\Twig;
 
+use Bluetel\WebpackManifestBundle\WebpackManifest;
 use Twig_Extension;
 use Twig_Function;
 
 class WebpackManifestExtension extends Twig_Extension
 {
     /**
-     * WebpackManifestExtension constructor.
-     * @param $manifestPath
+     * @var WebpackManifest
      */
-    public function __construct($manifestPath)
+    private $webpackManifest;
+
+    /**
+     * @param $webpackManifest
+     */
+    public function __construct(WebpackManifest $webpackManifest)
     {
-        $this->manifestPath = $manifestPath;
+        $this->webpackManifest = $webpackManifest;
     }
 
     /**
@@ -29,16 +34,6 @@ class WebpackManifestExtension extends Twig_Extension
      */
     public function manifestAsset(string $assetFilename)
     {
-        if (!file_exists($this->manifestPath)) {
-            return $assetFilename;
-        }
-
-        $manifest = json_decode(file_get_contents($this->manifestPath), true);
-
-        if (!isset($manifest[$assetFilename])) {
-            return $assetFilename;
-        }
-
-        return $manifest[$assetFilename];
+        return $this->webpackManifest->getAssetPath($assetFilename);
     }
 }
