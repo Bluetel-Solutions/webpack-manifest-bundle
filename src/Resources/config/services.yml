@@ -4,6 +4,8 @@ services:
         class: Bluetel\WebpackManifestBundle\WebpackManifest
         arguments:
             - "%webpack_manifest.webpack_manifest_path%"
+            - %webpack_manifest.output_path%
+            - %webpack_manifest.public_path%
 
     webpack_manifest.controller:
         class: Bluetel\WebpackManifestBundle\Controller\WebpackManifestController

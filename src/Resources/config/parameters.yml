@@ -1,2 +1,4 @@
 parameters:
-    webpack_manifest.webpack_manifest_path: %kernel.root_dir%/../web/assets/manifest.json
+    webpack_manifest.public_path: /assets
+    webpack_manifest.output_path: %kernel.root_dir%/../web/assets/
+    webpack_manifest.webpack_manifest_path: %webpack_manifest.output_path%/manifest.json

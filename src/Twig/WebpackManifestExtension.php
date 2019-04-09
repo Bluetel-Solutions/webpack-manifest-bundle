@@ -25,7 +25,10 @@ class WebpackManifestExtension extends Twig_Extension
      */
     public function getFunctions()
     {
-        return array(new Twig_Function('webpack_manifest_asset', array($this, 'manifestAsset')));
+        return array(
+            new Twig_Function('webpack_manifest_asset', array($this, 'manifestAsset')),
+            new Twig_Function('webpack_manifest_asset_inline', array($this, 'manifestAssetInline'), array('is_safe' => array('all'))),
+        );
     }
 
     /**
@@ -35,5 +38,14 @@ class WebpackManifestExtension extends Twig_Extension
     public function manifestAsset(string $assetFilename)
     {
         return $this->webpackManifest->getAssetPath($assetFilename);
+    }
+
+    /**
+     * @param string $assetFilename
+     * @return string
+     */
+    public function manifestAssetInline(string $assetFilename)
+    {
+        return $this->webpackManifest->getAssetContents($assetFilename);
     }
 }
