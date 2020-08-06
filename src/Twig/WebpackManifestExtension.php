@@ -3,7 +3,7 @@ namespace Bluetel\WebpackManifestBundle\Twig;
 
 use Bluetel\WebpackManifestBundle\WebpackManifest;
 use Twig_Extension;
-use Twig_Function;
+use Twig_SimpleFunction;
 
 class WebpackManifestExtension extends Twig_Extension
 {
@@ -21,11 +21,11 @@ class WebpackManifestExtension extends Twig_Extension
     }
 
     /**
-     * @return Twig_Function[]
+     * @return Twig_SimpleFunction[]
      */
     public function getFunctions()
     {
-        return array(new Twig_Function('webpack_manifest_asset', array($this, 'manifestAsset')));
+        return array(new Twig_SimpleFunction('webpack_manifest_asset', array($this, 'manifestAsset')));
     }
 
     /**
