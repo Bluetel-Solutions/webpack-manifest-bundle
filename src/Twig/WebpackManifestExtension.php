@@ -32,7 +32,7 @@ class WebpackManifestExtension extends Twig_Extension
      * @param string $assetFilename
      * @return string
      */
-    public function manifestAsset(string $assetFilename)
+    public function manifestAsset($assetFilename)
     {
         return $this->webpackManifest->getAssetPath($assetFilename);
     }

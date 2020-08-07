@@ -2,7 +2,9 @@
 namespace Bluetel\WebpackManifestBundle\Controller;
 
 use Bluetel\WebpackManifestBundle\WebpackManifest;
-use Symfony\Component\HttpFoundation\{Request, RedirectResponse, Response};
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 /**

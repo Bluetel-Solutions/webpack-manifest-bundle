@@ -20,7 +20,7 @@ class WebpackManifest
      * @param string $assetFilename
      * @return string
      */
-    public function getAssetPath(string $assetFilename)
+    public function getAssetPath($assetFilename)
     {
         if (!file_exists($this->manifestPath)) {
             return $assetFilename;
